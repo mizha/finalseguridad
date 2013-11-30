@@ -1,0 +1,134 @@
+html { padding: 0;
+width: 100%;
+height: 100%;
+}
+body {
+background-color: #CCCCCC;
+background-position:center;
+background-repeat:no-repeat;
+margin: auto;
+padding: 0;
+width: 100%;
+height: 100%;
+scrollbar-face-color:#CCCCCC;
+scrollbar-highlight-color:#CCCCCC; 
+scrollbar-shadow-color:#CCCCC; 
+scrollbar-3dlight-color:#FFFFFF; 
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-track-color:#E3E3E3;
+scrollbar-darkshadow-color:#000000;
+}
+a {
+	cursor: hand;
+}
+#cont_cabecera a:hover{
+	color:#CCCCCC;
+}
+#cont_cabecera a:visited{
+	color:#FFFFFF;
+}
+h1{
+ font: bold 150% Arial,Helvetica, Verdana, sans-serif;
+ margin: 0px;
+ padding: 0px;
+}
+
+h2{
+ font: bold 114% Arial,Helvetica, Verdana, sans-serif;
+ margin: 0px;
+ padding: 0px;
+}
+
+h3{
+ font: bold 100% Arial,Helvetica, Verdana, sans-serif;
+ margin: 0px;
+ padding: 0px;
+}
+
+h4{
+ font: 100% Arial,Helvetica, Verdana, sans-serif;
+ margin: 0px;
+ padding: 0px;
+}
+
+h5{
+ font: 100% Arial,Helvetica, Verdana, sans-serif;
+ margin: 0px;
+ padding: 0px;
+}
+#all {
+	/*background-color: #110;*/
+	border: 0px solid #C8EBF4;
+	margin: 0 auto;
+	width: 990px;
+	position: relative;
+	display: block;
+	min-height: 600px;
+	height: auto!important;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+#cont_cabecera { 
+margin-top: 90px;
+height: 30px;
+text-align:right;
+position: relative;
+color:#FFFFFF;
+/*background-color: #999;*/
+}
+#cont_lat_izq { width: 133px;
+float: left;
+position: relative;
+height: auto;
+min-height: 570px;
+height: 570px;
+margin-left: 0px;
+margin-top: -30px;
+/*background-color: #990;*/
+}
+/*#cont_lat_der { width: 0px;
+float: right;
+position: relative;
+min-height: 570px;
+height: 570px;
+height: auto;
+margin-right: 0px;
+margin-top: 0px;
+background-color: #909;
+}*/
+#cont_contenido { 
+position:relative;
+float: left;
+height: auto!important;
+min-height: 525px;
+max-height: 525px;
+height: 525px;
+width: 593px;
+margin-top: 66px;
+margin-left: 265px;
+font-size:9px;
+font: Arial,Helvetica,sans-serif;
+overflow:auto;
+vertical-align:middle;
+/*background-color: #999;*/
+}
+#pie_div {
+width: 100%;
+position: absolute;
+color: #fff;
+bottom: 0;
+text-align: center;
+/*background-color: #110;*/
+height: 20px;
+/*margin-top: -115px;*/
+clear: both;
+}
+.corte { clear: both;}
+#centro { 
+/*border-left: 100px solid #666;
+border-rigth: 100px solid #666;
+background-color: #999;*/
+height: auto!important;
+width: 993px;
+position: relative;
+
+}

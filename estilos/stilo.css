@@ -1,0 +1,851 @@
+/*--the following styles are used to define the subnav (secondary nav) for the main sections (unviversity and bixnet have their own subnavs) --*/
+.subnavcontainer {
+	width: 132px;
+}
+.banner {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: thin solid #000099;
+	width: 250px;
+	padding: 8px;
+	text-transform: none;
+	background-color: #F2F9FF;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	color: #FF0000;
+	margin: 10px;
+}
+.subnav01 a {
+	color: #FFFFFF;
+	padding: 4px 4px 4px 25px;
+	display: block;
+	font:bold 11px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-align: left;
+	text-transform: none;
+	border: none;
+	text-indent: 0px;
+}
+.subnav01 a:hover {
+	color: #333333;
+	text-decoration: none;
+	background-image: url(images/subnav_indicator.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.subnav02 a {
+	color: #FFFFFF;
+	padding: 4px 4px 4px 30px;
+	background-color: #1A90C5;
+	display: block;
+	font: normal 11px/normal Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-align: left;
+	text-transform: none;
+	border: none;
+}
+.subnav02 a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+	font-weight: normal;
+	background-image: url(images/spacer.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+/* "YOU ARE HERE SETTING" for all subnavs */
+#ubernav01 a:link,
+#ubernav01 a:visited,
+#ubernav01 a:hover, 
+#ubernav01 a:active {
+	display: block;
+	padding: 2px 2px 4px 25px;
+	background-color: #FF9900;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-image: url(images/subnav_indicator_uber.gif);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+#ubernav02 a:link,
+#ubernav02 a:visited,
+#ubernav02 a:hover, 
+#ubernav02 a:active {
+	display: block;
+	padding: 2px 2px 4px 30px;
+	background-color: #52C1E3;
+	color: #000066;
+	font-weight: normal;
+	text-decoration: none;
+	background-image: url(images/spacer.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+
+
+
+/*--the following styles are used to define the background graphics and overall site look --*/
+body {
+	background-attachment: fixed;
+	background-color: #CCCCCC;
+	background-image: url(images/bckgrnd.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+/* --creates a white background for the main table that the site is held within-- */
+.main {
+	border-top-width: 0px;
+	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #FFFFFF;
+	border-bottom-style: solid;
+	background-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+}
+.bottom_background {
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.background {
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+
+
+
+/*--the following styles are used to create the the page title for the site --*/
+/*--titlebar is used as a container for the page title--*/
+.titlebar {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	vertical-align: bottom;
+
+	color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding: 0px;
+	line-height: 30px;
+}
+/*--titlebar1 is used for the text in the main title--*/
+.titlebar1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	line-height: 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	vertical-align: bottom;
+	color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-left: 4px;
+}
+/*--titlebar2 is used for the text in the sub title--*/
+.titlebar2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	line-height: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	vertical-align: bottom;
+	color: #FF9900;
+}
+.titlebar2s {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	line-height: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	vertical-align: bottom;
+	color: #FF9900;
+}
+/*--titlebar3 is used for the text in the main title when titlebar1's text is to large--*/
+.titlebar3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	line-height: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	vertical-align: bottom;
+	color: #FFFFFF;
+	text-indent: 0px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-top: 4px;
+}
+
+
+
+
+/*-- the following styles are used for header and footer components --*/
+.language {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.language a:{}
+.language a:hover{}
+.language a:visited{}
+
+.srch_frm {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #000066;
+	padding-right: 5px;
+	padding-left: 0px;
+	text-align: left;
+	vertical-align: middle;
+	text-indent: 1pt;
+	bottom: auto;
+	display: inline;
+	height: 10px;
+}
+.breadcrumbs {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-transform: lowercase;
+	color: #620000;
+	text-align: left;
+	vertical-align: middle;
+	height: 20px;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.breadcrumbs a{
+	font-size: 10px;
+	color: #2B4D84;
+	text-decoration: none;
+}
+.breadcrumbs a:hover{}
+.breadcrumbs a:visited{}
+
+/*--small_text is used for welcome and to jci.cc and search jci.cc --*/
+.small_forms {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-transform:lowercase;
+	color: #000000;
+	text-align: left;
+	vertical-align: middle;
+	height: 20px;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.small_text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	text-transform: lowercase;
+	color: #2B4D84;
+	text-align: left;
+	vertical-align: middle;
+	height: 20px;
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.small_text a {
+	font-size: 11px;
+	color: #620000;
+	text-decoration: underline;
+}
+.small_text a: hover{}
+.small_text a: visited{}
+
+.footer_link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: left;
+	color: #FFFFFF;
+}
+.footer_link a {
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.footer_link a:hover {
+	color: #FF9900;	
+}
+.footer_link a:visited{}
+
+
+
+
+
+/* -- the following styles are used for the main content area of the site (they are also used within the promo section)-- */
+/* -- centre is used to pad the main content section on the left and right side-- */
+
+.centre {
+	padding-right: 8px;
+	padding-left: 2px;
+	width: 430px;
+}
+
+/*-- pictureleft is used to create the appropriate padding around a a picture for news articles (pictures are recommended to be 135pxl*135pxl) -- */
+
+.pictureleft {
+	width: 135px;
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+
+.title_picture {
+	width: 135px;
+	border: 3px solid #FFFFFF;
+}
+/*-- content styles are  used as the main text for all sections-- */
+.content {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding-top: 5px;
+	text-align: left;
+}
+.content_bold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: bottom;
+}
+/* --content01 is a larger regular text style used for important names within regular cotent areas-- */
+.content01 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.contentsm {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+/* --content_title is an alternative title to the regular "heading" titles to be used within contnent and "listed" sections -- */
+.content_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #2B4D84;
+}
+ 
+/*-- the heading styles are used as titles for content sectoins within the site (there is a heading style for each channel, the university section and title page)--*/
+.heading1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 14px;
+	font-weight: bold;
+	color: #2B4D84;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.heading1_unv {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 14px;
+	font-weight: bold;
+	color: #4D3461;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.heading1_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 13px;
+	font-weight: bold;
+	color: #620000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.heading1_en {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 13px;
+	font-weight: bold;
+	color: #D03E0D;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.heading1_ldr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 13px;
+	font-weight: bold;
+	color: #6B8743;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.heading1_man {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 13px;
+	font-weight: bold;
+	color: #763381;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+.heading1_trn {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 13px;
+	font-weight: bold;
+	color: #333680;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+/*-- the heading_sub is used for sub title's eg.the title of a specific article found in a featured content section --*/
+.heading1_sub {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+}
+/*-- the heading_unv is a heading style that is rarely used within the site --*/
+.heading_unv {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #4D3461;
+
+}
+
+/* -- the following are link styles for the main content and promo sections --*/
+/* --content links are for within a content section and are usally used in a list of links followed by a click link to close off the section
+eg. a list of articles would be a content links followed by a click link to request more articles --*/
+.content_link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.content_link a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #1B1B1B;
+	text-decoration: none;
+}
+.content_link a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FF9900;
+}
+.content_link a:visited{}
+
+/* content channel links are used in the same manner as content links but for alternative sections eg.university and the channels */
+.content_link_channel {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.content_link_channel a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #2B4D84;
+	text-decoration: none;
+}
+.content_link_channel a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FF9900;
+}
+content_link_channel a:visited {}
+
+/*-- the click styles are used to create links at the "BOTTOM" of regular content areas--*/
+.click {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #2B4D84;
+}
+.click a {
+	color: #2B4D84;
+	text-decoration: none;
+}
+.click a:hover  {
+	text-decoration: underline;
+}
+.click a:visited{}
+/* --the following click styles are used within the channel sections and university-- */
+.click_unv {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #4D3461;
+}
+.click_unv a {
+	text-decoration: none;
+}
+.click_unv a:hover  {
+	text-decoration: underline;
+}
+.click_unv a:visited{}
+
+.link01_unv {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	color: #4D3461;
+}
+.click_en {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #D03E0D;
+}
+.click_en a {
+	text-decoration: none;
+}
+.click_en a:hover  {
+	text-decoration: underline;
+}
+.click_en a:visited{}
+
+.click_ldr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #6B8743;
+}
+.click_ldr a {
+	text-decoration: none;
+}
+.click_ldr a:hover  {
+	text-decoration: underline;
+}
+.click_ldr a:visited{}
+
+.click_man {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #763381;
+}
+.click_man a {
+	text-decoration: none;
+}
+.click_man a:hover  {
+	text-decoration: underline;
+}
+.click_man a:visited{}
+
+.click_trn {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 15px;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #333680;
+}
+.click_trn a {
+	text-decoration: none;
+}
+.click_trn a:hover  {
+	text-decoration: underline;
+}
+.click_trn a:visited{}
+
+/* -- click btm links are used when a link is required to sit flush to the left and at the btm of a table --*/
+.clickbtm {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	color: #2B4D84;
+	vertical-align: bottom;
+}
+.clickbtm a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	color: #2B4D84;
+	vertical-align: bottom;	
+	text-decoration: none;
+}
+.clickbtm a:hover {
+	text-decoration: underline;
+}
+.clickbtm a:visited{}
+
+.clickbtm_trn {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #333680;
+	vertical-align: bottom;
+}
+.clickbtm_trn a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #333680;
+	vertical-align: bottom;
+	text-decoration: none;
+}
+.clickbtm_trn a:hover {
+	text-decoration: underline;
+}
+.clickbtm_trn a:visited {}
+
+.clickbtm_en {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #D03E0D;
+	vertical-align: bottom;
+}
+.clickbtm_en a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	color: #D03E0D;
+	vertical-align: bottom;	
+	text-decoration: none;
+}
+.clickbtm_en a:hover {
+	text-decoration: underline;
+}
+.clickbtm_en a:visited{}
+
+.clickbtm_ldr {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #333680;
+	vertical-align: bottom;
+}
+.clickbtm_ldr a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	color: #2B4D84;
+	vertical-align: bottom;	
+	text-decoration: none;
+}
+.clickbtm_ldr a:hover {
+	text-decoration: underline;
+}
+.clickbtm_ldr a:visited{}
+
+.clickbtm_man {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #333680;
+	vertical-align: bottom;
+}
+.clickbtm_man a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	color: #333680;
+	vertical-align: bottom;	
+	text-decoration: none;
+}
+.clickbtm_man a:hover {
+	text-decoration: underline;
+}
+.clickbtm_man a:visited{}
+.clickbtm_unv {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding-top: 5px;
+	text-transform: lowercase;
+	color: #333680;
+	vertical-align: bottom;
+}
+
+/* -- the following styles are for listed items such as courses and people directories --*/
+.portrait {
+	height: 98px;
+	width: 75px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+/* -- listed_itemcontainer provides required padding and border decoration for a listed item --*/
+.listed_itemcontainer {
+	padding-bottom: 2px;
+	padding-top: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+}
+/* -- listed_itemcontainer_end provides required padding and border decoration for the last item within a list --*/
+.listed_itemcontainer_end {
+	padding-bottom: 2px;
+	padding-top: 3px;
+}
+.listed_itemcontainer01 {
+
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+
+
+
+
+
+/* --the following styles have been created solely for the promotion section of the site-- */
+/* --promo is used to create the appropriate padding for the main promo section-- */
+.promo {
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	padding: 15px 15px 0px;
+}
+/* --promo heading is used for the title of the main promo section-- */
+.promo_heading {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 20px;
+	color: #336699;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #FFFFFF;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+/* --promo_pic styles are used to create specific coloured promotional areas within the main promo section -- */
+.promo_pic_oj {
+	border: 5px solid #FFAA2B;
+	background-color: #FFFFFF;
+}
+.promo_pic_blu {
+
+	border: 5px solid #1A90C5;
+	background-color: #FFFFFF;
+}
+
+.promo_subtxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+.quick_links_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	color: #FFFFFF;
+}
+.quick_links {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #000000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #333333;
+}
+.quick_links a{
+	color: #000000;
+	text-decoration: none;
+	
+}
+.quick_links a:hover {
+	color: #FF9900;
+}
+.quick_links a:visited{}
+
