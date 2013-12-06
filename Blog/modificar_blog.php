@@ -10,6 +10,13 @@ $cuerpo= $_REQUEST["cuerpo"];
 $sql = "UPDATE `blog` SET `Titulo` = '".$titulo."', `Cuerpo` = '".$cuerpo."' WHERE `IdBlog` =".$blogId; 
   $res = mysql_query($query);
   $res = mysql_db_query("jci",$sql);
+
+  session_start();
+      $ci = $_SESSION["ci"];
+      $tiempo = date("Y/m/d");
+      $query_log = "INSERT INTO log VALUES ('','$ci','modificar','Se modifico el blog  de titulo $titulo ','$tiempo')";
+      mysql_db_query("jci",$query_log);
+
 //  echo '<meta http-equiv="refresh" content="3;URL=mostrar_Blog.php?blogid='.$blogId.'">';
 mysql_close();
 ?>

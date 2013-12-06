@@ -19,6 +19,11 @@ echo ' <p><h1>Categoria Agregada</h1></p> ';
 $sql="INSERT INTO `tipovideo` (`IdTipo`, `Tipo`) VALUES ('', '".$categoria."')";  
 $res = mysql_db_query("jci",$sql);
 
+session_start();
+    $ci = $_SESSION["ci"];
+    $tiempo = date("Y/m/d");
+    $query_log = "INSERT INTO log VALUES ('','$ci','insertar','Agregacion de nueva categoria $categoria','$tiempo')";
+    mysql_db_query("jci",$query_log);
 echo '<meta http-equiv="refresh" content="2;URL=../Video/nuevoVideo.php">';
 mysql_close();
 ?>

@@ -50,7 +50,7 @@ if ($imagen_type=="image/gif" OR $imagen_type=="image/gif"){
  }
 
 
- if($imagen_size>$lim_tamano){echo '<h2>La imagen excede el tamaño no debe pasar de 2 MB</h2>';
+ if($imagen_size>$lim_tamano){echo '<h2>La imagen excede el tamaï¿½o no debe pasar de 2 MB</h2>';
  }
 
  
@@ -62,7 +62,7 @@ if ($imagen_name != "" AND $imagen_size != 0 AND $imagen_size<=$lim_tamano AND $
  lectura "r" binaria"b"*/
 $f1= fopen($imagen_temporal,"rb");
 #leemos el fichero completo limitando
-#  la lectura al tamaño de fichero		
+#  la lectura al tamaï¿½o de fichero		
 $imagen_reconvertida = fread($f1, $imagen_size);
 #anteponemos \ a las comillas que pudiera contener el fichero
 # para evitar que sean interpretadas como final de cadena	
@@ -74,9 +74,15 @@ $row= mysql_fetch_array($res);
 $idCarpeta=$row["IdCarpeta"];
 //echo 'Carpeta numero'.$idCarpeta.'<br>';
 $bd = mysql_select_db ("imagen");
+ $ci = $_SESSION["ci"];
+ $tiempo = date("Y/m/d");
+$query_log = "INSERT INTO log VALUES ('','$ci','Insertar enlaces','se inserto nueva imagen".$nombre." ".$descripcion."','$tiempo')";
+mysql_db_query("jci",$query_log);
+
 
 $query="INSERT INTO `enlace` VALUES ('','".$nombre."','".$descripcion."','".$ci."','".$imagen_reconvertida."','".$extension."','".$imagen_size."')"; 
 $res=mysql_db_query("jci",$query);
+
 if(mysql_affected_rows()!=0){
 		mysql_close();
         print "<h1><CENTER>Link Subido Con exito!!</CENTER></h1>";

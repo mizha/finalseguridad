@@ -91,6 +91,12 @@ $tables = '*';
 	</SCRIPT>
     <?
 	fclose($handle);
+
+	session_start();
+        $ci = $_SESSION["ci"];
+        $tiempo = date("Y/m/d");
+        $query_log = "INSERT INTO log VALUES ('','$ci','Creacion','Creacion de nuevo back up total de la BD','$tiempo')";
+        mysql_db_query("jci",$query_log);
 ?>
 
 <!-- <img src="imagenes/Pagina Dia.jpg"> -->

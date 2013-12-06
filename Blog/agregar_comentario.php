@@ -11,6 +11,12 @@ $query = "INSERT INTO `comentarioblog` (`IdComentario`, `IdBlog`, `CI`, `Comenta
 ////$res = mysql_query($query);
 
   $res = mysql_db_query("jci",$query);
+  session_start();
+      $ci = $_SESSION["ci"];
+      $tiempo = date("Y/m/d");
+      $query_log = "INSERT INTO log VALUES ('','$ci','Ingreso','Se agrego el comentario $cuerpo','$tiempo')";
+      mysql_db_query("jci",$query_log);
+
 header("Location: mostrar_Blog.php?blogid=".$blogId);
 //  echo '<meta http-equiv="refresh" content="3;URL=mostrar_Blog.php?blogid='.$blogId.'">';
 mysql_close();

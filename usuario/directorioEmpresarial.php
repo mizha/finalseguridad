@@ -6,6 +6,12 @@ include("../libPermisos.php");
 include("../funciones.php");
 include("libUsuario.php");
 $tabla=$_GET["tab"];
+session_start();
+    $ci = $_SESSION["ci"];
+    $tiempo = date("Y/m/d");
+    $query_log = "INSERT INTO log VALUES ('','$ci','Mostrar','Ingreso al directorio empresarial','$tiempo')";
+    mysql_db_query("jci",$query_log);
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

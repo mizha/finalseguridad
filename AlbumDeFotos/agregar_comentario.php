@@ -22,6 +22,12 @@ $query = "INSERT INTO `comentarioimagen` (`IdComentario`, `IdImagen`, `CI`, `Com
 ////$res = mysql_query($query);
 
   $res = mysql_db_query("jci",$query);
+
+  session_start();
+      $ci = $_SESSION["ci"];
+      $tiempo = date("Y/m/d");
+      $query_log = "INSERT INTO log VALUES ('','$ci','Insertar','Agregacion de comentario de imagen','$tiempo')";
+      mysql_db_query("jci",$query_log);
 echo '<meta http-equiv="refresh" content="3;URL=albumdefotos.php?pic='.$imagenId.'&carpetas='.$carpeta.'">';
 mysql_close();
 ?>

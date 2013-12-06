@@ -15,6 +15,12 @@ if($act == ""){
     //$conexion = conectar();
     $sql = "delete from eventos where eventoid = $eventoid";
     $res = mysql_db_query("jci",$sql);
+    session_start();
+    $ci = $_SESSION["ci"];
+    $tiempo = date("Y/m/d");
+    $query_log = "INSERT INTO log VALUES ('','$ci','Borrar evento','Evento borrado','$tiempo')";
+    mysql_db_query("jci",$query_log);
+
     if($res){
         echo "Evento borrado.";
         redireccionar('3','mostrar.php');

@@ -24,6 +24,12 @@ if(!isset($evento)){
 
 $sql = "select * from eventos where fecha = '$evento'";
 $res = mysql_db_query("jci",$sql);
+session_start();
+    $ci = $_SESSION["ci"];
+    $tiempo = date("Y/m/d");
+    $query_log = "INSERT INTO log VALUES ('','$ci','Ver evento','Ver eventos en fechas $evento','$tiempo')";
+    mysql_db_query("jci",$query_log);
+
 if(mysql_num_rows($res) > 0){
     while($fila = mysql_fetch_array($res)){
         echo "<tr><td class='tdfecha'>".$fila['fecha']."<br>".$fila['hora']."</td><td class='tdevento'>".$fila['evento']."</td>";

@@ -34,6 +34,7 @@ else{$hora=$h;}
 if($minutos[0]!=0 && $minutos<=9){$hora=$hora.":0".$minutos;}
 else{$hora=$hora.":".$minutos;}
 
+
 if($fecha != "" && $evento != "" && $hora != ""){
     //$conexion = conectar();
     $sql = "insert into eventos(fecha,hora,evento) values('$fecha','$hora','$evento')";
@@ -107,5 +108,6 @@ Ingrese aqui su evento</TEXTAREA></td></tr>
 <tr><td colspan="2" align="center"><input type="submit" value="Enviar"></td></tr>
 </table>
 </form>
-<? }?></font>
+<? }
+?></font>
 <!---->

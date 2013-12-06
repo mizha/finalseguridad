@@ -55,7 +55,7 @@ if ($imagen_name != "" AND $imagen_size != 0 AND $imagen_size<=$lim_tamano AND $
 	/*reconversion de la imagen para meter en la tabla abrimos el fichero temporal en modo lectura "r" binaria"b"*/
 		$f1= fopen($imagen_temporal,"rb");
 		#leemos el fichero completo limitando
-		#  la lectura al tamaño de fichero		
+		#  la lectura al tamaï¿½o de fichero		
 		$imagen_reconvertida = fread($f1, $imagen_size);
 		#anteponemos \ a las comillas que pudiera contener el fichero
 		# para evitar que sean interpretadas como final de cadena	
@@ -97,11 +97,26 @@ while($row=mysql_fetch_array($res))
 	if($row["CI"]==$ci)
 	{
 		echo '<script>
-		alert("Lo siento este número de carnet de identidad ya esta registrado");
+		alert("Lo siento este nï¿½mero de carnet de identidad ya esta registrado");
 		history.back();</script>'."\n";
 		$comprobacion=1;
 	}
 }
+// Realizar la comprobacion de que el correo no existe
+// esta consulta se hace en la base de datos junior
+$query="SELECT `email` FROM junior";
+$res=mysql_db_query("jci",$query);
+while($row=mysql_fetch_array($res))
+{
+	if($row["email"]==$mail)
+	{
+		echo '<script>
+		alert("Lo siento este email ya esta registrado");
+		history.back();</script>'."\n";
+		$comprobacion=1;
+	}
+}
+
 // fin de comprobacion
 if($comprobacion==0){
 //Meter datos en junior

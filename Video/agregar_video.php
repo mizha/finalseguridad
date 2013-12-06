@@ -27,6 +27,12 @@ echo '<br>codigo'.$codigo;*/
 $sql="INSERT INTO `video` (`IdVideo`, `Nombre`, `Codigo`, `Tipo`) VALUES ('', '".$titulo."', '".$codigo."', '".$tipo["IdTipo"]."')";  
 $res = mysql_db_query("jci",$sql);
 
+session_start();
+    $ci = $_SESSION["ci"];
+    $tiempo = date("Y/m/d");
+    $query_log = "INSERT INTO log VALUES ('','$ci','Insertat','Ingreso de nuevo video con categoria $categoria, con titulo $titulo','$tiempo')";
+    mysql_db_query("jci",$query_log);
+
 echo '<meta http-equiv="refresh" content="2;URL=../Video.php">';
 mysql_close();
 ?>

@@ -14,6 +14,12 @@ $sql = "UPDATE  `comentarioblog` SET `Eliminado` = 'Si' WHERE `IdComentario` ='"
 
   $res = mysql_query($sql);
   $res = mysql_db_query("jci",$sql);
+
+  session_start();
+      $ci = $_SESSION["ci"];
+      $tiempo = date("Y/m/d");
+      $query_log = "INSERT INTO log VALUES ('','$ci','Eliminar','Eliminacion de comentario','$tiempo')";
+      mysql_db_query("jci",$query_log);
 echo '<meta http-equiv="refresh" content="1;URL=../blog/mostrar_Blog.php?blogid='.$blogId.'">';
 mysql_close();
 ?>

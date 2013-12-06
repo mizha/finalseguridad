@@ -43,7 +43,7 @@ function cabecera($regis,$nombre,$ci)
   <li class="nivel1"><a href="#" class="nivel1">Programas</a> 
 <!--[if lte IE 6]><a href="#" class="nivel1ie">Programas<table class="falsa"><tr><td><![endif]--> 
 	<ul> 
-		<li class="primera"><a href="#">Planificación Estrategica</a></li>
+		<li class="primera"><a href="#">Planificaciï¿½n Estrategica</a></li>
 		<li><a href="index2.php?id=7">Miembro individual</a></li> 
 		<li><a href="index2.php?id=16">Reina del Carnaval</a></li> 
 		<li><a href="index2.php?id=15">Comerciales</a></li>
@@ -128,9 +128,7 @@ function cabecera($regis,$nombre,$ci)
 	<ul>
 		<li  class="primera"><a href="reportes/aexcel.php">Base de Datos a Excel</a></li>
 		 <li><a href="BackUp/CrearBack.php"> BackUp total de la BD</a></li>  
-        <li><a href="BackUp/CrearBackPersonalizado.php"> BackUp parcial de la BD</a></li>
-        <li><a href="BackUp/CrearBackAnimado.php"> BackUp de imagen</a></li>
-        <li><a href="BackUp/backCarpeta.php"> BackUp de codigo</a></li>  
+        <li><a href="usuario/ver_activos.php">Validar registros</a></li>
         <li><a href="Blog/Eliminar.php">Eliminar Blog</a></li>
 		<li><a href="Video/nuevaCategoria">Nuevo Categoria Video</a></li>
 		<li><a href="albumdefotos/nuevacarpeta.php">Nueva Carpeta de Imagenes</a></li>
@@ -160,7 +158,7 @@ function cabecera($regis,$nombre,$ci)
 <? }?>
 <? function pie()
 {
-echo 'Diseño Por <a href="http://www.gdrpc.com.bo" target="_blank">Raul Clavijo</a> y Programación por <a href="#">Marieta Gonzales</a>';
+echo 'Diseï¿½o Por <a href="http://www.gdrpc.com.bo" target="_blank">Raul Clavijo</a> y Programaciï¿½n por <a href="#">Marieta Gonzales</a>';
 }
 ?>
 <? function ultimosBlogs()

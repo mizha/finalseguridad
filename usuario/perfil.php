@@ -31,7 +31,9 @@ if($regis=="SI" OR $regis=="NO")
 	<div id="cont_lat_der"></div> 
 	<div id="cont_contenido">
 		<? $id=$_GET["id"];?>
-		<? if($regis=="SI"){echo "<center><h2><a href=\"modificarperfil.php?id=".$id."\">Modificar Tu Perfil</a></h2></center>";}?>
+		<? if($regis=="SI"){
+		echo "<center><h2><a href=\"ver_log.php\">ver logs</a></h2></center>";
+		echo "<center><h2><a href=\"modificarperfil.php?id=".$id."\">Modificar Tu Perfil</a></h2></center>";}?>
 		<? mostrarPerfil($id);?>
 		<? mostrarEmpresa($id);?>
 	</div> 

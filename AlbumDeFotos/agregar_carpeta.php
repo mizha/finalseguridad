@@ -31,7 +31,7 @@ if($regis=="SI" OR $regis=="NO")
 	<div id="cont_contenido">
 	<br><br><br><br><div align="center">
       <?php 
-	  		//creación de la carpeta
+	  		//creaciï¿½n de la carpeta
 			$nombre =$_POST["titulo"];
 			$descrip =$_POST["cuerpo"];
 			echo ' <h1>Carpeta Agregada</h1> ';
@@ -41,6 +41,12 @@ if($regis=="SI" OR $regis=="NO")
 			$bd = mysql_select_db ("carpetas");
 			$query="INSERT INTO `carpetas` (`IdCarpeta`, `Nombre`, `Descripcion`) VALUES ('', '".$nombre."', '".$descrip."')";  
 	        $res = mysql_query($query);
+	        session_start();
+                $ci = $_SESSION["ci"];
+                $tiempo = date("Y/m/d");
+                $query_log = "INSERT INTO log VALUES ('','$ci','insertar','Creacion de una carpeta con nombre $nombre','$tiempo')";
+                mysql_db_query("jci",$query_log);
+
 			mysql_close();	
 ?>
 <a href="subir_fotos.php">Sube imagenes</a>
