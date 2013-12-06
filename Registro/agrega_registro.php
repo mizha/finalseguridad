@@ -125,8 +125,12 @@ $query="INSERT INTO junior VALUES ('$ci','$nombre','$apellido','$telefonodom','$
 $res=mysql_db_query("jci",$query);
 $id = mysql_insert_id();
 //Meter Datos en juniorpass
-$query="INSERT INTO juniorpass VALUES ('$ci','$usuario','$contra','$tipo','$tipo')";
+$query="INSERT INTO juniorpass VALUES ('$ci','$usuario','$contra','$tipo','$tipo','no')";
 $res=mysql_db_query("jci",$query);
+//datos en intentos
+$query="INSERT INTO intentos VALUES ('$usuario','0','0000-00-00','0000-00-00','$ci','si')";
+$res=mysql_db_query("jci",$query);
+
 echo '<script>
 		alert("Usted Ha sido registrado");location.href = "../index.php";</script>'."\n";
 }

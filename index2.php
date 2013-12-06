@@ -6,6 +6,8 @@ include("libPermisos.php");
 include("funciones.php");
 include("Blog/libBlog.php");
 
+ini_set('session.gc_maxlifetime',60);
+session_start();
 if($regis=="SI" OR $regis=="NO") 
  {
 ?>

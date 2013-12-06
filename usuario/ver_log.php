@@ -6,7 +6,7 @@ session_start();
 $ci = $_SESSION["ci"];
 
 $tiempo = date("Y/m/d");
-    $sacar = "SELECT * FROM ".$tabla." WHERE (ci=$ci)";
+    $sacar = "SELECT * FROM ".$tabla." WHERE (ci=$ci)" ;
 
     $resultado = mysql_db_query("jci",$sacar);
 ?>
@@ -30,12 +30,9 @@ while ($datos = mysql_fetch_array($resultado))
 
 <?php
 }
-?>
-</table>
-<?
+
       $query_log = "INSERT INTO log VALUES ('','$ci','ver','se vio el log del usuario ','$tiempo')";
       mysql_db_query("jci",$query_log);
-
 
 mysql_close();
 ?>
