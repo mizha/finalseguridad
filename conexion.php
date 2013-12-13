@@ -8,3 +8,9 @@ $dbname="jci";
 mysql_connect($hostname,$username, $password) OR DIE ("<html><script language='JavaScript'>window.location.href = 'error.php?err=bd1'</script></html>");
 @mysql_select_db($dbname) or DIE ("<html><script language='JavaScript'>window.location.href = 'error.php?err=bd'</script></html>");
 ?>
+
+
+//$hostname="mysql.hostinger.es";
+//$username="u913064844_jci";
+//$password="seguridad";
+//$dbname="u913064844_jci";
