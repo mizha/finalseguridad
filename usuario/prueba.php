@@ -5,44 +5,6 @@ include("../libPrincipal2.php");
 include("../conexion.php");
 include("../libPermisos.php");
 include("../funciones.php");
-
-if($regis=="SI" OR $regis=="NO")
- {
- 	if(permitir($tipo,"publicarblog"))
-	{
-	$numero=$_REQUEST['n'];
-    $tabla="log";
-    session_start();
-    $ci = $_SESSION["ci"];
-
-    $tiempo = date("Y/m/d");
-        $sacar = "SELECT * FROM ".$tabla." WHERE (ci=$ci)" ;
-
-        $resultado = mysql_db_query("jci",$sacar);
-
-            //Para la paginacion
-            		$registros = 10;
-            		$pagina = $_GET["pagina"];
-            			if (!$pagina) {
-            			$inicio = 0;
-            			$pagina = 1;
-            			}
-            			else {
-            			$inicio = ($pagina - 1) * $registros;
-            			//var_dump($inicio);
-            			}
-            //Fin Inicio Paginación
-
-	$query = "SELECT ci FROM ".$tabla." WHERE (ci=$ci)" ;
-	$result = mysql_db_query("jci",$query);
-	$total_registros = mysql_num_rows($result);
-
-	$query = "SELECT * FROM ".$tabla." WHERE (ci=$ci) DESC LIMIT $inicio, $registros";
-	$result = mysql_query($query);
-	$result = mysql_db_query("jci",$query);
-	$total_paginas = ceil($total_registros / $registros);
-
-
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -54,6 +16,38 @@ if($regis=="SI" OR $regis=="NO")
 <link rel="stylesheet" href="../estilos/menu.css" type="text/css">
 <!--<link href="estilo.css" rel="stylesheet" type="text/css">-->
 </head>
+<?
+echo "paginacion0";
+if($regis=="SI" OR $regis=="NO")
+ {              echo "paginacion1";
+ 	if(permitir($tipo,"publicarblog"))
+	{
+	$numero=$_REQUEST['n'];
+    $tabla="log";
+    session_start();
+    $ci = $_SESSION["ci"];
+
+    $tiempo = date("Y/m/d");
+        $sacar = "SELECT * FROM ".$tabla." WHERE (ci=$ci)" ;
+
+        $resultado = mysql_db_query("jci",$sacar);
+    echo "paginacion";
+    //Para la paginacion
+    		$registros = 10;
+    		$pagina = $_GET["pagina"];
+    			if (!$pagina) {
+    			$inicio = 0;
+    			$pagina = 1;
+    			}
+    			else {
+    			$inicio = ($pagina - 1) * $registros;
+    			}
+    //Fin Inicio Paginación
+    $total_registros = mysql_num_rows($resultado);
+    var_dump($total_registros);
+    echo "paginacion2";
+?>
+
 <? echo '<br>';?>
 <body background="<? echo fondo();?>">
 <div id="all">
@@ -76,7 +70,13 @@ if($regis=="SI" OR $regis=="NO")
  <th>TIEMPO</th>
  </tr>
  <?
- $contador = 0;
+
+ $query = "SELECT * FROM ".$tabla." WHERE (ci=$ci) ORDER BY ` ci` DESC LIMIT $inicio, $registros";
+ 	$result = mysql_query($query);
+ 	$result = mysql_db_query("jci",$query);
+ 	$total_paginas = ceil($total_registros / $registros);
+
+
  while ($datos = mysql_fetch_array($resultado))
  {
  ?>
@@ -88,10 +88,10 @@ if($regis=="SI" OR $regis=="NO")
  </tr>
 
  <?php
- $contador = $contador+1;
  }
  ?>
  </table>
+
  <?
  // Inicio Paginación de nuevo
  		if(($pagina - 1) > 0) {
@@ -102,10 +102,10 @@ if($regis=="SI" OR $regis=="NO")
  		} else {
  			echo "<a href='ver_log.php?pagina=$i'>$i</a> ";
  		}
- 	 }
- 		if(($pagina + 1)<=$total_paginas) {
- 			echo " <a href='ver_log.php?pagina=".($pagina+1)."'>Siguiente ></a>";
- 		}
+ 	    if(($pagina + 1)<=$total_paginas) {
+    			echo " <a href='ver_log.php?pagina=".($pagina+1)."'>Siguiente ></a>";
+    		}
+
  ?>
 
 </table>
@@ -124,6 +124,8 @@ if($regis=="SI" OR $regis=="NO")
 </body>
 </html>
 <?php
+       $query_log = "INSERT INTO log VALUES ('','$ci','ver','se vio el log del usuario ','$tiempo')";
+       mysql_db_query("jci",$query_log);
 
  }
 

@@ -3,7 +3,7 @@
 	function validar()
 	{
 
-		 // incio de validación de espacios nulos
+		 // incio de validaciï¿½n de espacios nulos
 		if(document.registro.nombre.value.length==0)
 		{
 			alert("El nombre necesario");
@@ -54,21 +54,21 @@
 		}
 		if(document.registro.pass.value.length==0)
 		{
-			alert("No coloco una contraseña");
+			alert("No coloco una contraseï¿½a");
 			document.registro.pass.focus();
 			return 0;
 		}
 		if(document.registro.conpass.value.length==0)
 		{
-			alert("Debe validar su contraseña");
+			alert("Debe validar su contraseï¿½a");
 			document.registro.conpass.focus();
 			return 0;
 		}
 		
 		 var RegExPattern = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/;			
-		    var errorMessage = 'Password Incorrecta.';
+		    var errorMessage = 'Password No seguro.';
 		    if ((document.registro.pass.value.match(RegExPattern)) && (document.registro.pass.value!="")) {
-		        alert('Password Correcta'); 
+		        alert('Password Seguro');
 		    } else {
 		        alert(errorMessage);
 		        document.registro.pass.focus();
@@ -127,7 +127,7 @@
 		}
 		if(document.registro.pass.value.length<=7 ||  document.registro.pass.value.length>=15 )
 		{
-			alert("La contraseña debe estar entre 8 y 15 caracteres");
+			alert("La contraseï¿½a debe estar entre 8 y 15 caracteres");
 			document.registro.pass.focus();
 			return 0;
 		}
@@ -136,43 +136,43 @@
 		// incio validaciones especiales
 		if(isNaN(document.registro.ci.value))
 		{
-			alert("El carnet de indentidad tiene que ser un número");
+			alert("El carnet de indentidad tiene que ser un nï¿½mero");
 			document.registro.ci.focus();
 			return 0;
 		}
 		if(isNaN(document.registro.telfdom.value))
 		{
-			alert("El telefono de domicilio tiene que ser un número");
+			alert("El telefono de domicilio tiene que ser un nï¿½mero");
 			document.registro.telfdom.focus();
 			return 0;
 		}
 		if(isNaN(document.registro.telfofi.value)&& document.registro.telfofi.value.length!=0)
 		{
-			alert("El telefono de oficina tiene que ser un número");
+			alert("El telefono de oficina tiene que ser un nï¿½mero");
 			document.registro.telfofi.focus();
 			return 0;
 		}
 		if(isNaN(document.registro.celular.value))
 		{
-			alert("El celular tiene que ser un número");
+			alert("El celular tiene que ser un nï¿½mero");
 			document.registro.celular.focus();
 			return 0;
 		}
 		if ((document.registro.mail.value.indexOf("@"))<3)
 		{
-			alert("Lo siento,la cuenta de correo parece errónea. Por favor, comprueba el prefijo y el signo '@'.");
+			alert("Lo siento,la cuenta de correo parece errï¿½nea. Por favor, comprueba el prefijo y el signo '@'.");
 			document.registro.mail.focus();
 			return 0;
 		}
 		if ((document.registro.mail.value.indexOf(".com")<5)&&(document.registro.mail.value.indexOf(".org")<5)&&(document.registro.mail.value.indexOf(".gov")<5)&&(document.registro.mail.value.indexOf(".net")<5)&&(document.registro.mail.value.indexOf(".mil")<5)&&(document.registro.mail.value.indexOf(".edu")<5))
 		{
-			alert("Lo siento. Pero esa cuenta de correo parece errónea. Por favor,"+" comprueba el sufijo (que debe incluir alguna terminación como: .com, .edu, .net, .org, .gov o .mil)");
+			alert("Lo siento. Pero esa cuenta de correo parece errï¿½nea. Por favor,"+" comprueba el sufijo (que debe incluir alguna terminaciï¿½n como: .com, .edu, .net, .org, .gov o .mil)");
 			document.registro.email.focus() ;
 			return 0;
 		} 
 		if(document.registro.pass.value !=document.registro.conpass.value )
 		{
-			alert("Las contraseñas no coinciden");
+			alert("Las contraseï¿½as no coinciden");
 			document.registro.conpass.focus();
 			return 0;
 		}
@@ -184,7 +184,7 @@
 		}
 		if(document.registro.tipo.value >=3 && document.registro.ingreso.value ==0)
 		{
-			alert("Debes escoger el año que entraste a la camara");
+			alert("Debes escoger el aï¿½o que entraste a la camara");
 			document.registro.ingreso.focus();
 			return 0;
 		}

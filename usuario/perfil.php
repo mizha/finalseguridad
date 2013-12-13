@@ -30,9 +30,12 @@ if($regis=="SI" OR $regis=="NO")
 	<div id="cont_lat_izq"><? menu($regis,$nombre,$tipo);?></div>
 	<div id="cont_lat_der"></div> 
 	<div id="cont_contenido">
-		<? $id=$_GET["id"];?>
+		<? $id=$_GET["id"];
+		    $pagina=1;
+		?>
 		<? if($regis=="SI"){
-		echo "<center><h2><a href=\"ver_log.php\">ver logs</a></h2></center>";
+		//echo "<center><h2><a href=\"modificarContra.php?id=".$id."\">Cambiar contrasenia</a></h2></center>";
+		echo "<center><h2><a href=\"ver_log.php?pagina=1\">ver logs</a></h2></center>";
 		echo "<center><h2><a href=\"modificarperfil.php?id=".$id."\">Modificar Tu Perfil</a></h2></center>";}?>
 		<? mostrarPerfil($id);?>
 		<? mostrarEmpresa($id);?>

@@ -2,10 +2,9 @@
 	include("../conexion.php");
 	include("../libSesion.php");
 	
-	$ci1=$_POST["ci"];
-	if($ci1==$ci)
-	{
-		$contraAntigua=MD5($_POST["contraA"].'camarajuniorjci');
+	$ci1=$_GET["ci"];
+
+	$contraAntigua=MD5($_POST["contraA"].'camarajuniorjci');
 		//echo $contraAntigua.'<br>';
 		$contranueva=MD5($_POST["contraN"].'camarajuniorjci');
 		//echo $contranueva.'<br>';
@@ -16,15 +15,15 @@
 		$contra=$row["password"];
 		if($contraAntigua==$contra)
 		{
+		    $sql_cambio = "UPDATE juniorpass SET password='".$contranueva."' WHERE CI='".$ci1."'";
 			$sql="UPDATE juniorpass SET password='".$contranueva."' WHERE CI='".$ci1."'";
 			//echo $sql."<br>";
 			$res=mysql_db_query("jci",$sql);
-			echo '<script>alert("Se cambio la contraseña.");location.href="perfil.php?id='.$ci1.'"</script>'."\n";
+			echo '<script>alert("Se cambio la contraseï¿½a.");location.href="perfil.php?id='.$ci1.'"</script>'."\n";
 		}
 		else
 		{
-			echo '<script>alert("La contraseña es invalida.");location.href="perfil.php?id='.$ci1.'"</script>'."\n";
+			echo '<script>alert("La contraseï¿½a es invalida.");location.href="perfil.php?id='.$ci1.'"</script>'."\n";
 		}
-	}
-	else{header("Location: ../index.php");}
+
 ?>
