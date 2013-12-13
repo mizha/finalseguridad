@@ -16,14 +16,14 @@ if($regis=="SI" OR $regis=="NO")
     $ci = $_SESSION["ci"];
 
     $tiempo = date("Y/m/d");
-        $sacar = "SELECT * FROM ".$tabla." WHERE (ci=$ci)" ;
+    $sacar = "SELECT * FROM ".$tabla." WHERE (ci=$ci)" ;
 
         $resultado = mysql_db_query("jci",$sacar);
 
             //Para la paginacion
             		$registros = 10;
             		$pagina = $_GET["pagina"];
-            			if (!$pagina) {
+            		    if (!$pagina) {
             			$inicio = 0;
             			$pagina = 1;
             			}
@@ -33,14 +33,6 @@ if($regis=="SI" OR $regis=="NO")
             			}
             //Fin Inicio Paginación
 
-	$query = "SELECT ci FROM ".$tabla." WHERE (ci=$ci)" ;
-	$result = mysql_db_query("jci",$query);
-	$total_registros = mysql_num_rows($result);
-
-	$query = "SELECT * FROM ".$tabla." WHERE (ci=$ci) DESC LIMIT $inicio, $registros";
-	$result = mysql_query($query);
-	$result = mysql_db_query("jci",$query);
-	$total_paginas = ceil($total_registros / $registros);
 
 
 ?>
@@ -76,9 +68,21 @@ if($regis=="SI" OR $regis=="NO")
  <th>TIEMPO</th>
  </tr>
  <?
+ $query = "SELECT ci FROM ".$tabla." WHERE (ci=$ci)" ;
+ 	$result = mysql_db_query("jci",$query);
+ 	$total_registros = mysql_num_rows($result);
+
+ 	$query = "SELECT * FROM ".$tabla." WHERE (ci=$ci) ORDER BY ci DESC LIMIT $inicio,10";
+ 	echo $query;
+ 	//$result = mysql_query($query);
+ 	$result = mysql_db_query("jci",$query);
+ 	$total_paginas = ceil($total_registros / $registros);
+
+
  $contador = 0;
- while ($datos = mysql_fetch_array($resultado))
+ while ($datos = mysql_fetch_array($result))
  {
+
  ?>
  <tr>
  <td> <?=$datos["ci"]?> </td>
@@ -88,8 +92,7 @@ if($regis=="SI" OR $regis=="NO")
  </tr>
 
  <?php
- $contador = $contador+1;
- }
+  }
  ?>
  </table>
  <?
