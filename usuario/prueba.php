@@ -60,53 +60,13 @@ if($regis=="SI" OR $regis=="NO")
 <table border=0 class="index" align="center" valign="center" width="100%">
   <tr><td width="50%">
 <table border=1 cellspacing="2" cellpadding="10" width="100%" style="font-size:16px;">
-
-
- <table border = "1" width = "100%">
- <tr>
- <th>CI</th>
- <th>ACCION</th>
- <th>DESCRIPCION</th>
- <th>TIEMPO</th>
- </tr>
- <?
-
- $query = "SELECT * FROM ".$tabla." WHERE (ci=$ci) ORDER BY ` ci` DESC LIMIT $inicio, $registros";
- 	$result = mysql_query($query);
- 	$result = mysql_db_query("jci",$query);
- 	$total_paginas = ceil($total_registros / $registros);
-
-
- while ($datos = mysql_fetch_array($resultado))
- {
- ?>
- <tr>
- <td> <?=$datos["ci"]?> </td>
- <td> <?=$datos["accion"]?> </td>
- <td> <?=$datos["descripcion"]?> </td>
- <td> <?=$datos["tiempo"]?> </td>
- </tr>
-
- <?php
- }
- ?>
- </table>
-
- <?
- // Inicio Paginación de nuevo
- 		if(($pagina - 1) > 0) {
- 		echo "<a href='ver_log.php?pagina=".($pagina-1)."'>< Anterior</a> ";
- 		} for ($i=1; $i<=$total_paginas; $i++){
- 			if ($pagina == $i) {
- 				echo "<b>".$pagina."</b> ";
- 		} else {
- 			echo "<a href='ver_log.php?pagina=$i'>$i</a> ";
- 		}
- 	    if(($pagina + 1)<=$total_paginas) {
-    			echo " <a href='ver_log.php?pagina=".($pagina+1)."'>Siguiente ></a>";
-    		}
-
- ?>
+<?
+$fecha_i = '2012-07-01 12:04:12';
+$fecha_f = '2012-07-18 15:04:12';
+$dias	= (strtotime($fecha_i)-strtotime($fecha_f))/86400;
+	$dias 	= abs($dias); $dias = floor($dias);
+	echo $dias;
+  ?>
 
 </table>
 </td><td>

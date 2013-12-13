@@ -19,6 +19,15 @@
 			$sql="UPDATE juniorpass SET password='".$contranueva."' WHERE CI='".$ci1."'";
 			//echo $sql."<br>";
 			$res=mysql_db_query("jci",$sql);
+
+			$tiempo = date("Y-m-d H:i:s");
+            $query_pass="Update juniorpasschange SET fechacambio='".$tiempo."' where CI='".$ci1."'";
+            $res=mysql_db_query("jci",$query_pass);
+
+            $tiempo = date("Y/m/d");
+            $query_log = "INSERT INTO log VALUES ('','$ci','modificar','se cambio la contrasenia del usuario ','$tiempo')";
+            mysql_db_query("jci",$query_log);
+
 			echo '<script>alert("Se cambio la contrase�a.");location.href="perfil.php?id='.$ci1.'"</script>'."\n";
 		}
 		else

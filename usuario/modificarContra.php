@@ -1,30 +1,43 @@
+
 <?
 include("../libSesion.php");
 include("../libPrincipal2.php");
 include("../conexion.php");
 include("../libPermisos.php");
 include("../funciones.php");
-include("libUsuario.php");
-
-if($regis=="SI")
- {
- 	$id=$_GET["id"];
- 	if($id==$ci)
-	{
 ?>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<script src="validar.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Modificar Perfil</title>
+<title>Registro de Actividades</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="stylesheet" href="../estilos/pagina.css" type="text/css">
 <link rel="stylesheet" href="../estilos/menu.css" type="text/css">
-
 <!--<link href="estilo.css" rel="stylesheet" type="text/css">-->
 </head>
+<?
+
+if($regis=="SI" OR $regis=="NO")
+ {
+ 	if(permitir($tipo,"publicarblog"))
+	{
+	$numero=$_REQUEST['n'];
+    $tabla="log";
+    session_start();
+    $ci = $_SESSION["ci"];
+
+    $tiempo = date("Y/m/d");
+        $sacar = "SELECT * FROM ".$tabla." WHERE (ci=$ci)" ;
+
+        $resultado = mysql_db_query("jci",$sacar);
+
+
+    $total_registros = mysql_num_rows($resultado);
+
+
+?>
+
 <? echo '<br>';?>
 <body background="<? echo fondo();?>">
 <div id="all">
@@ -34,10 +47,11 @@ if($regis=="SI")
 	<div id="cont_lat_izq"><? menu($regis,$nombre,$tipo);?></div>
 	<div id="cont_lat_der"></div>
 	<div id="cont_contenido">
-<!--<div style="background-image:'../imagenes/Boton Datos 02.jpg'; height:auto; width:220px;">
-  </div>-->
-/////////////////////////////////////////////
-<div id="contrasenia">
+<table border=0 class="index" align="center" valign="center" width="100%">
+  <tr><td width="50%">
+<table border=1 cellspacing="2" cellpadding="10" width="100%" style="font-size:16px;">
+
+
 <table width="100%"  border="1" cellspacing="2" cellpadding="2" bordercolor="#CCCCCC">
    <tr>
     <th colspan="4" bgcolor="#000099" scope="col"><font color="#FFFFFF"><h2>CONTRASE�AS</h2></font></th>
@@ -61,8 +75,15 @@ if($regis=="SI")
   </tr>
 </form>
   </table>
-</div>
 
+
+</table>
+</td><td>
+
+
+</tr></td>
+</table>
+</div>
 <div class="corte"></div>
 </div>
 <div id="pie_div"><? pie();?></div>
@@ -71,7 +92,9 @@ if($regis=="SI")
 </div>
 </body>
 </html>
-<?php }
+<?php
+  }
+
 	else{
 //	echo "No tienes acceso a esta pagina";
 ?>

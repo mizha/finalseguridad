@@ -73,7 +73,7 @@ if($regis=="SI" OR $regis=="NO")
  	$total_registros = mysql_num_rows($result);
 
  	$query = "SELECT * FROM ".$tabla." WHERE (ci=$ci) ORDER BY ci DESC LIMIT $inicio,10";
- 	echo $query;
+
  	//$result = mysql_query($query);
  	$result = mysql_db_query("jci",$query);
  	$total_paginas = ceil($total_registros / $registros);
@@ -96,6 +96,10 @@ if($regis=="SI" OR $regis=="NO")
  ?>
  </table>
  <?
+             $tiempo = date("Y/m/d");
+             $query_log = "INSERT INTO log VALUES ('','$ci','ver','Se vio el log del usuario ','$tiempo')";
+             mysql_db_query("jci",$query_log);
+
  // Inicio Paginación de nuevo
  		if(($pagina - 1) > 0) {
  		echo "<a href='ver_log.php?pagina=".($pagina-1)."'>< Anterior</a> ";

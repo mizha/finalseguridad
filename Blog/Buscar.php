@@ -39,7 +39,12 @@ if($regis=="SI" OR $regis=="NO")
 $buscar= $_GET ["titulo"];
 if($buscar !=NULL){
 buscarBlog($buscar,3,$tipo,$usuario);
-}?>
+}
+$tiempo = date("Y/m/d");
+$query_log = "INSERT INTO log VALUES ('','$ci','Buscar','se busco un blog con el titulo $buscar ','$tiempo')";
+mysql_db_query("jci",$query_log);
+
+?>
 </div> 
 <div class="corte"></div> 
 </div>

@@ -29,12 +29,35 @@ else{
    $id=$array["CI"];
 
 	if($array["password"]==MD5($_POST["pass"].'camarajuniorjci') ){
-		$_SESSION["login"]=$_POST["usuario"];
+
+        $_SESSION["login"]=$_POST["usuario"];
 		$_SESSION["ci"]=$array["CI"];
 		$_SESSION["tipo"]=$array["tipo"];
 		//echo $SESSION["tipo"];
 		$_SESSION["especial"]=$array["especial"];
 		$id=$array["CI"];
+
+	$query = "select * from juniorpasschange where ci='".$id."'";
+	$result=mysql_db_query("jci",$query);
+    $array2=mysql_fetch_array($result);
+
+
+    $fecha_i = $array2["fechacambio"];
+    $fecha_f = date("Y-m-d H:i:s");
+    $dias	= (strtotime($fecha_i)-strtotime($fecha_f))/86400;
+
+	$dias 	= abs($dias);
+	$dias = floor($dias);
+
+
+    if ($dias > 90)
+	{
+	    echo "<h1>Debes Cambiar la contrasenia, han pasado tres meses desde la creacion o modificacion .</h1>";
+	    echo '<meta http-equiv="refresh" content="7;URL=usuario/modificarContra.php">';
+	}
+	else
+	{
+
 
 		//registrando el ingreso del usuario
 
@@ -48,8 +71,24 @@ else{
 
         		 if($fila_usuario["verificacion"]=="si")
                       {
+                         $query = "select * from intentos where ci='".$id."'";
+                      	$result=mysql_db_query("jci",$query);
+                         $array2=mysql_fetch_array($result);
 
-                         $sql_update = "UPDATE intentos SET ultimavisita='".$tiempo."', intentos='0' WHERE $id=".$fila_usuario["ci"];
+                          $fecha_i = $array2["ultimavisita"];
+                          $fecha_f = date("Y-m-d H:i:s");
+                          $dias	= (strtotime($fecha_i)-strtotime($fecha_f))/86400;
+
+                      	$dias 	= abs($dias);
+                      	$dias = floor($dias);
+
+                        if ($dias > 0)
+                        {
+                           $sql_update = "UPDATE intentos SET intentos='0' WHERE CI=".$fila_usuario["ci"];
+                           $result = mysql_db_query("jci",$sql_update);
+                        }
+
+                         $sql_update = "UPDATE intentos SET ultimavisita='".$tiempo."' WHERE CI=".$fila_usuario["ci"];
                           $result = mysql_db_query("jci",$sql_update);
                           header("location: index.php");
 
@@ -89,18 +128,18 @@ else{
 		//session_register("SESSION");
 		header("location: index.php");
 
-
-	} 
+     }
+	}  //fin del if
 	else {
 	    $sql_login="SELECT * FROM intentos WHERE usuario='$usuario'";
-	    echo $sql_login;
+
         $result = mysql_db_query("jci",$sql_login);
         $fila_usuario = mysql_fetch_array($result);
         $tiempo = date("y/m/d H:i:s");
 
 	    $intento = $fila_usuario["intentos"];
 	    $sql_update = "UPDATE intentos SET ultimavisita='".$tiempo."', intentos='$intento'+1 WHERE CI=".$fila_usuario["ci"];
-	    echo $sql_update;
+
         $result = mysql_db_query("jci",$sql_update);
 
 	    session_destroy();

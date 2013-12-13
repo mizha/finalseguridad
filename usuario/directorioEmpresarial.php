@@ -46,6 +46,10 @@ session_start();
 				mostrarPerfilEmpresa($row["CI"]);
 				echo "<br>";
 			}
+			$tiempo = date("Y/m/d");
+            $query_log = "INSERT INTO log VALUES ('','$ci','ver','Los directores empresariales','$tiempo')";
+            mysql_db_query("jci",$query_log);
+
 		?>
 	</div> 
 <div class="corte"></div> 

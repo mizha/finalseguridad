@@ -130,6 +130,10 @@ $res=mysql_db_query("jci",$query);
 //datos en intentos
 $query="INSERT INTO intentos VALUES ('$usuario','0','0000-00-00','0000-00-00','$ci','si')";
 $res=mysql_db_query("jci",$query);
+//datos en  passwordchange
+$tiempo = date("Y-m-d H:i:s");
+$query_pass="INSERT INTO juniorpasschange VALUES ('$ci','$usuario','$tiempo');
+$res=mysql_db_query("jci",$query_pass);
 
 echo '<script>
 		alert("Usted Ha sido registrado");location.href = "../index.php";</script>'."\n";

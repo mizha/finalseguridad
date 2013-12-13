@@ -83,6 +83,7 @@ mysql_db_query("jci",$query_log);
 $query="INSERT INTO `enlace` VALUES ('','".$nombre."','".$descripcion."','".$ci."','".$imagen_reconvertida."','".$extension."','".$imagen_size."')"; 
 $res=mysql_db_query("jci",$query);
 
+
 if(mysql_affected_rows()!=0){
 		mysql_close();
         print "<h1><CENTER>Link Subido Con exito!!</CENTER></h1>";
