@@ -6,7 +6,7 @@
 	function contar($blogId)
 	{
 		$sql="SELECT count(*) AS `contado` FROM `comentarioblog` WHERE `IdBlog` ='".$blogId."' AND `Eliminado` = 'No'";
-		$re=mysql_db_query("jci",$sql);
+		$re=mysql_query($sql,"u913064844_jci");
 		if(mysql_affected_rows()==0){
 	       return 0;
 	   	}
@@ -35,7 +35,7 @@
 	function Obtener($blogId)
 	{
 	//mysql_connect("localhost","root");
-	$result=mysql_db_query("jci","SELECT * FROM `blog` WHERE `IdBlog`=".$blogId);
+	$result=mysql_query("SELECT * FROM `blog` WHERE `IdBlog`=".$blogId,"u913064844_jci");
 	$row=mysql_fetch_array($result);
 	$titulo=$row["Titulo"];
 	$cuerpo=$row["Cuerpo"];
@@ -63,7 +63,7 @@
 	function imprimirBlog($blogId)
 	{
 	//mysql_connect("localhost","root");
-	$result=mysql_db_query("jci","SELECT * FROM `blog` WHERE `IdBlog`=".$blogId);
+	$result=mysql_query("SELECT * FROM `blog` WHERE `IdBlog`=".$blogId,"u913064844_jci");
 	$row=mysql_fetch_array($result);
   	echo ' <div class="feature"> ';
 	echo ' <h2>'.$row["Titulo"].'</h2> ';
@@ -73,16 +73,17 @@
 	}
 	function obtenerTitulo ($blogId)
 	{
-		$result=mysql_db_query("jci","SELECT * FROM `blog` WHERE `IdBlog`=".$blogId);
+		$result=mysql_query("SELECT * FROM `blog` WHERE `IdBlog`=".$blogId,"u913064844_jci");
 		$row=mysql_fetch_array($result);
 		return $row["Titulo"];
 	}
 	function imprimirBlog2($blogId,$regis,$tipo)
 	{
 	//mysql_connect("localhost","root");
-	$result=mysql_db_query("jci","SELECT * FROM `blog` WHERE `IdBlog`=".$blogId);
+	
+    $result=mysql_query("SELECT * FROM `blog` WHERE `IdBlog`=".$blogId);
 	$row=mysql_fetch_array($result);
-
+    error_reporting(0);
 	echo ' <h1>'.$row["Titulo"].'</h1> ';
 	if($regis=='SI' && $tipo==5){ // Y es Presidente
 	echo '<center><a href="Blog/ModificarBlog.php?blogId='.$blogId.'">Modificar</center></a>';}
@@ -100,11 +101,11 @@
 	   //if($tipe==1 || $opcion==3){//Elimina lo que desee 
 	   if($opcion==3 || $tipe==5){
 	   		$sql = "SELECT * FROM `blog` WHERE `visible`= 'Si' AND `Titulo` LIKE '%".$buscado."%'"; 
-		    $result=mysql_db_query("jci",$sql);
+		    $result=mysql_query($sql,"u913064844_jci");
 			}
 		elseif($tipe!=5){	
 			$sql = "SELECT * FROM `blog` WHERE `visible`= 'Si' AND `Titulo` LIKE '%".$buscado."%' AND `CI` ='".$ci."'"; 
-		    $result=mysql_db_query("jci",$sql);
+		    $result=mysql_query($sql,"u913064844_jci");
 		}
 	   if(mysql_affected_rows()==0){
 	       echo '<h1>No existen resultados</h1>';
@@ -163,11 +164,11 @@
 			else { 
 			$inicio = ($pagina - 1) * $registros; 
 			} 
-//Fin Inicio Paginación
-$result=mysql_db_query("jci","select `IdBlog` from blog WHERE `visible`= 'Si' ORDER BY `IdBlog` DESC");
+//Fin Inicio Paginaciï¿½n
+$result=mysql_query("select `IdBlog` from blog WHERE `visible`= 'Si' ORDER BY `IdBlog` DESC","u913064844_jci");
 $total_registros = mysql_num_rows($result); 
 
-	$result=mysql_db_query("jci","select * from blog WHERE `visible`= 'Si' ORDER BY `IdBlog` DESC LIMIT $inicio, $registros");
+	$result=mysql_query("select * from blog WHERE `visible`= 'Si' ORDER BY `IdBlog` DESC LIMIT $inicio, $registros","u913064844_jci");
 	$total_paginas = ceil($total_registros / $registros);
 	$row=mysql_fetch_array($result);
 	 //echo ' <div class="feature"> ';
@@ -214,7 +215,7 @@ if ($contador == 1)
  $iterador++;
 }
 echo'</tr> </table>';
-// Inicio Paginación de nuevo 
+// Inicio Paginaciï¿½n de nuevo 
 		if(($pagina - 1) > 0) { 
 echo "<a href='Blog.php?pagina=".($pagina-1)."'>< Anterior</a> "; 
 } for ($i=1; $i<=$total_paginas; $i++){ 
@@ -234,7 +235,7 @@ mysql_free_result($result);
 	function imprimirTabla()
 	{
 	 //mysql_connect("localhost","root");
-	 $result=mysql_db_query("jci","select * from blog  WHERE `visible`= 'Si' ORDER BY `IdBlog` DESC");
+	 $result=mysql_query("select * from blog  WHERE `visible`= 'Si' ORDER BY `IdBlog` DESC","u913064844_jci");
 	 echo ' <div class="story"> ';
      echo ' <table width="100%" height="40" cellpadding="0" cellspacing="0" summary=""> ';
 	 $contador = 1;

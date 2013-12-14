@@ -24,7 +24,7 @@ function cabecera($regis,$nombre,$ci)
 		echo '<h5>Bienvenido &nbsp;<a href="usuario/perfil.php?id='.$ci.'">'.$nombre.'</a>&nbsp;,&nbsp;<a href="logout.php">Salir</a></h5>';
 	}
 	else{
-		echo '<h5><a href="iniciarsesion.php">Iniciar Sesion</a>&nbsp;o&nbsp;<a href="Registro/registro.php">Registrate</a></h5>';
+		echo '<h5><a href="iniciarSesion.php">Iniciar Sesion</a>&nbsp;o&nbsp;<a href="Registro/registro.php">Registrate</a></h5>';
 	}
 }?>
 
@@ -164,7 +164,7 @@ echo 'Dise�o Por <a href="http://www.gdrpc.com.bo" target="_blank">Raul Clavij
 <? function ultimosBlogs()
 	{
 		$sql = "SELECT * from blog Where visible='Si' Order By IdBlog DESC Limit 0 , 5";
-		$res=mysql_db_query("jci",$sql);
+		$res=mysql_query($sql);
 	$final='<MARQUEE onmouseover=this.stop() style="WIDTH: 136px; HEIGHT: 100px" onmouseout=this.start() scrollAmount=2 direction=up>';
 		while($row=mysql_fetch_array($res))
 		{
